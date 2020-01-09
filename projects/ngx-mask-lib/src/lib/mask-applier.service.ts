@@ -281,9 +281,10 @@ export class MaskApplierService {
         ) {
           if (!!inputArray[cursor] && maskExpression !== '099.099.099.099') {
             result += inputArray[cursor];
+          } else {
+            i--;
           }
           cursor++;
-          i--;
         } else if (
           this.maskExpression[cursor + 1] === '*' &&
           this._findSpecialChar(this.maskExpression[cursor + 2]) &&
